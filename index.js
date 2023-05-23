@@ -61,12 +61,7 @@ async function run() {
             }
         });
 
-        app.get("/alltoys/:id", async (req, res) => {
-            const id = req.params.id;
-            const query = { _id: new ObjectId(id) };
-            const result = await toysCollection.findOne(query);
-            res.send(result);
-        });
+
 
         app.get("/mytoys", async (req, res) => {
             const email = req.query?.email;
