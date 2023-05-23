@@ -39,7 +39,7 @@ async function run() {
             res.send(result);
         });
 
-        // all toys get
+        // all toys get into this
 
         app.get("/alltoys", async (req, res) => {
             const limit = 20;
@@ -96,6 +96,7 @@ async function run() {
             console.log(id);
             const query = { _id: new ObjectId(id) };
             const result = await toysCollection.findOne(query);
+
             res.send(result);
         });
 
