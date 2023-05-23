@@ -91,14 +91,7 @@ async function run() {
             }
         });
 
-        app.get("/mytoys/:id", async (req, res) => {
-            const id = req.params.id;
-            console.log(id);
-            const query = { _id: new ObjectId(id) };
-            const result = await toysCollection.findOne(query);
 
-            res.send(result);
-        });
 
         app.post("/addtoys", async (req, res) => {
             const newToyCars = req.body;
