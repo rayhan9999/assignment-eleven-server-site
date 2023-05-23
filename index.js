@@ -100,7 +100,12 @@ async function run() {
             res.send(result);
         });
 
-
+        app.post("/addtoys", async (req, res) => {
+            const newToyCars = req.body;
+            console.log(newToyCars);
+            const result = await toysCollection.insertOne(newToyCars);
+            res.send(result);
+        });
 
         app.put("/mytoys/:id", async (req, res) => {
             const id = req.params.id;
